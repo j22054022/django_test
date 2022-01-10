@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+{% load static %}
+{% block title %}
+    <title>first_app_Index</title>
+{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block content_block %}
+    <h1>This is index.html of first_app</h1>
+    <h2>Please login first</h2>
+    <p>{{ variable }}</p>
+    <img src="{% static 'images/doge.jpg' %}" alt="doge">
+    <div class="topic_list_wrap wrap">
+        <h2>topic</h2>
+        {% if topic_list %}
+            {% for item in topic_list %}
+                <p>{{ item.top_name }}<p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="access_records_wrap wrap grid-col-2">
+        {% if date_dict.access_records %}
+            <div class="access_records_name_wrap">
+                <h3>access_records_name</h3>
+                {% for item in date_dict.access_records %}
+                    <p>{{ item.name }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="access_records_date_wrap">
+                <h3>access_records_date</h3>
+                {% for item in date_dict.access_records %}
+                    <p>{{ item.date }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    <a href="userformpage">user_form_page</a>
+{% endblock %}

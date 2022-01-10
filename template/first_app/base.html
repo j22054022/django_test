@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title></title>
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block link %}
+        <link rel="stylesheet" href="">
+    {% endblock %}
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'first_app:user_logout' %}">Logout</a></li>
+            {% elif request.path != '/first_app/userlogin' %}
+                <li><a href="{% url 'first_app:user_login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% block content_block %}
+        <h1>This is base.html</h1>
+    {% endblock %}
+</body>
+</html>

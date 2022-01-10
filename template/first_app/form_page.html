@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_page</title>
+    <link rel="stylesheet" href="{% static 'css/form_page.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form action="" method="POST">
+            {{ form.non_field_errors }}
+            {{ form }}
+            {% csrf_token %}
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    {% if data %}
+        <div>
+            <p>{{ data.hidden_input }}</p>
+            <p>{{ data.name }}</p>
+            <p>{{ data.email }}</p>
+            <p>{{ data.text }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>

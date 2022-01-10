@@ -1,0 +1,22 @@
+nav > ul {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+nav > ul > li {
+    list-style: none;
+}
+
+nav {
+    padding: 16px;
+    border-bottom: 1px black solid;
+    margin-bottom: 16px;
+    background: linear-gradient(#afa, #faf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}

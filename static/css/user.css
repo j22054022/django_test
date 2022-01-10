@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 10px;
+    text-align: left;
+}
+
+ol {
+    margin: 50px;
+}
+
+li {
+    text-align: left;
+}
+
+ul {
+    margin-left: 50px;
+}
+
+ol > li {
+    margin-bottom: 10px;
+}

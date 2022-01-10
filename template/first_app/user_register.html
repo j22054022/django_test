@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+{% load static %}
+{% block title %}
+    <title>user_register</title>
+{% endblock %}
+{% block content_block %}
+    <h1>Registration</h1>
+    <div class="form_wrap">
+        <form action="" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            {{ form_user.as_p }}
+            {{ form_user_profile.as_p }}
+            <div>
+                <input type="submit" value="Create">
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+{% load static %}
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+{% block content_block %}
+    <h1>Login</h1>
+    <form action="{% url 'first_app:user_login' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <input type="submit" value="Login">
+            <a href="{% url 'first_app:user_register' %}">Create account</a>
+        </div>
+    </form>
+{% endblock %}

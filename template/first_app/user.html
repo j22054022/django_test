@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+</head>
+<body>
+    <h1>This is Users</h1>
+    {% if user_list %}
+        <ol>
+            {% for item in user_list %}
+                <li>User Info
+                    <ul>
+                        <li>First_Name: {{ item.first_name }} &nbsp; </li>
+                        <li>Last_Name: {{ item.last_name }} &nbsp; </li>
+                        <li>{{ item.email }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <h2>no user</h2>
+    {% endif %}
+</body>
+</html>
